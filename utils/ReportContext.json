@@ -1,0 +1,728 @@
+{
+    "pageFilters": [
+        {
+            "column": "gMIS Project Status",
+            "table": "(Local) Basic Project Details",
+            "operator": "In",
+            "isAll": false,
+            "values": [
+                "Recent Launch"
+            ]
+        },
+        {
+            "column": "Area MIS",
+            "table": "Unit Status",
+            "isAll": true
+        },
+        {
+            "column": "RERA %",
+            "table": "(Local) Basic Project Details",
+            "isAll": true
+        },
+        {
+            "column": "Sub Classification 2",
+            "table": "(Local) Basic Project Details",
+            "operator": "In",
+            "isAll": false,
+            "values": [
+                "Apartments"
+            ]
+        }
+    ],
+    "pageSlicers": [
+        {
+            "name": "d6177b3f4b7e6bcaca77",
+            "title": "Retention %",
+            "type": "slicer",
+            "capabilities": {
+                "dataRoles": [
+                    {
+                        "name": "Values",
+                        "displayName": "Field",
+                        "description": "The field to display",
+                        "kind": 0
+                    }
+                ]
+            },
+            "filters": [
+                {
+                    "$schema": "http://powerbi.com/product/schema#advanced",
+                    "target": {
+                        "table": "Retention %",
+                        "column": "Retention %"
+                    },
+                    "filterType": 0,
+                    "displaySettings": {
+                        "isHiddenInViewMode": false
+                    },
+                    "logicalOperator": "And",
+                    "conditions": []
+                }
+            ],
+            "slicerState": {
+                "filters": [
+                    {
+                        "$schema": "http://powerbi.com/product/schema#basic",
+                        "target": {
+                            "table": "Retention %",
+                            "column": "Retention %"
+                        },
+                        "filterType": 1,
+                        "operator": "In",
+                        "values": [
+                            0.04
+                        ],
+                        "requireSingleSelection": false
+                    }
+                ],
+                "targets": [
+                    {
+                        "table": "Retention %",
+                        "column": "Retention %"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "11ff6209eacccd244510",
+            "title": "Brokerage %",
+            "type": "slicer",
+            "capabilities": {
+                "dataRoles": [
+                    {
+                        "name": "Values",
+                        "displayName": "Field",
+                        "description": "The field to display",
+                        "kind": 0
+                    }
+                ]
+            },
+            "filters": [
+                {
+                    "$schema": "http://powerbi.com/product/schema#advanced",
+                    "target": {
+                        "table": "Brokerage %",
+                        "column": "Brokerage %"
+                    },
+                    "filterType": 0,
+                    "displaySettings": {
+                        "isHiddenInViewMode": false
+                    },
+                    "logicalOperator": "And",
+                    "conditions": []
+                }
+            ],
+            "slicerState": {
+                "filters": [
+                    {
+                        "$schema": "http://powerbi.com/product/schema#basic",
+                        "target": {
+                            "table": "Brokerage %",
+                            "column": "Brokerage %"
+                        },
+                        "filterType": 1,
+                        "operator": "In",
+                        "values": [
+                            0.05
+                        ],
+                        "requireSingleSelection": false
+                    }
+                ],
+                "targets": [
+                    {
+                        "table": "Brokerage %",
+                        "column": "Brokerage %"
+                    }
+                ]
+            }
+        }
+    ],
+    "reportFilters": [
+        {
+            "column": "Unit Relevancy",
+            "table": "Unit Status",
+            "operator": "In",
+            "isAll": false,
+            "values": [
+                "Y"
+            ]
+        },
+        {
+            "column": "gMIS Project Category",
+            "table": "(Local) Basic Project Details",
+            "operator": "NotIn",
+            "isAll": false,
+            "values": [
+                "Dummy",
+                "Exclude"
+            ]
+        },
+        {
+            "column": "gMIS Project Status",
+            "table": "(Local) Basic Project Details",
+            "operator": "NotIn",
+            "isAll": false,
+            "values": [
+                "Unlaunched"
+            ]
+        },
+        {
+            "column": "PG4",
+            "table": "Unit Status",
+            "operator": "NotIn",
+            "isAll": false,
+            "values": [
+                "Non-Residential"
+            ]
+        }
+    ],
+    "visuals": [
+        {
+            "column": "Cash Collection across categories",
+            "dataRoles": [
+                {
+                    "name": "Category",
+                    "displayName": "X-axis",
+                    "description": "Fields to place on the horizontal or vertical axis",
+                    "kind": 0,
+                    "dataFields": [
+                        {
+                            "$schema": "http://powerbi.com/product/schema#column",
+                            "column": "gMIS Project Category",
+                            "table": "(Local) Basic Project Details",
+                            "display": "gMIS Project Category"
+                        }
+                    ]
+                },
+                {
+                    "name": "Series",
+                    "displayName": "Legend",
+                    "description": "The categorical field to show for color",
+                    "kind": 0,
+                    "dataFields": []
+                },
+                {
+                    "name": "Y",
+                    "displayName": "Y-axis",
+                    "description": "The numeric amounts to plot",
+                    "kind": 1,
+                    "dataFields": [
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Cash Collection",
+                            "table": "Measure",
+                            "display": "Cash Collection"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Cost (Const+Infra)",
+                            "table": "Measure",
+                            "display": "Project Cost (Const+Infra)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rows",
+                    "displayName": "Small multiples",
+                    "description": "Split your visual into multiple, smaller visuals based on your selected fields",
+                    "kind": 0,
+                    "dataFields": []
+                },
+                {
+                    "name": "Tooltips",
+                    "displayName": "Tooltips",
+                    "description": "Add additional data fields that people can see in the tooltip when they hover on part of this visualization.",
+                    "kind": 1,
+                    "dataFields": []
+                }
+            ],
+            "filters": [
+                {
+                    "column": "gMIS Project Category",
+                    "operator": "All",
+                    "table": "(Local) Basic Project Details",
+                    "isAll": true,
+                    "isAdvanced": false
+                },
+                {
+                    "column": "Cash Collection",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Cost (Const+Infra)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                }
+            ],
+            "table": false,
+            "type": "clusteredColumnChart",
+            "_id": "4110be53d7277dce189f"
+        },
+        {
+            "column": "Card",
+            "dataRoles": [
+                {
+                    "name": "Values",
+                    "displayName": "Fields",
+                    "description": "The fields to display",
+                    "kind": 1,
+                    "dataFields": [
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Refresh Date",
+                            "table": "Measure",
+                            "display": "Refresh Date"
+                        }
+                    ]
+                }
+            ],
+            "filters": [
+                {
+                    "column": "Refresh Date",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                }
+            ],
+            "table": false,
+            "type": "card",
+            "_id": "7962b29b7910e110d113"
+        },
+        {
+            "column": "Projects De-risked in next 12 months",
+            "dataRoles": [
+                {
+                    "name": "Rows",
+                    "displayName": "Rows",
+                    "description": "The fields to use on rows",
+                    "kind": 0,
+                    "dataFields": [
+                        {
+                            "$schema": "http://powerbi.com/product/schema#column",
+                            "column": "gMIS Project Category",
+                            "table": "(Local) Basic Project Details",
+                            "display": "Project Category"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#column",
+                            "column": "Property Name",
+                            "table": "(Local) Basic Project Details",
+                            "display": "Property Name"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#column",
+                            "column": "Property Classification *",
+                            "table": "(Local) Basic Project Details",
+                            "display": "Property Classification "
+                        }
+                    ]
+                },
+                {
+                    "name": "Columns",
+                    "displayName": "Columns",
+                    "description": "The fields to use on columns",
+                    "kind": 0,
+                    "dataFields": []
+                },
+                {
+                    "name": "Values",
+                    "displayName": "Values",
+                    "kind": 1,
+                    "dataFields": [
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Launch Date",
+                            "table": "Measure",
+                            "display": "Launch Date"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Value",
+                            "table": "Measure",
+                            "display": "Project Value"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Sold Value",
+                            "table": "Measure",
+                            "display": "Sold Value"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Sold Value % of Total",
+                            "table": "Measure",
+                            "display": "%"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Inventory Value",
+                            "table": "Measure",
+                            "display": "Inventory Value"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Inventory Value % of Total",
+                            "table": "Measure",
+                            "display": "%"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Cost (Const)",
+                            "table": "Measure",
+                            "display": "Project Cost (Const)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Cost (Infra)",
+                            "table": "Measure",
+                            "display": "Project Cost (Infra)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Cost (Const+Infra)",
+                            "table": "Measure",
+                            "display": "Project Cost (Const +Infra)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#columnAggr",
+                            "column": "Award Status Based on timeline",
+                            "table": "(Local) Completion Dates",
+                            "aggregationFunction": "Max",
+                            "display": "Award Status"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#columnAggr",
+                            "column": "Actual/Forecast Date for Main Contractor",
+                            "table": "(Local) Completion Dates",
+                            "aggregationFunction": "Max",
+                            "display": "Main Conc Award Date"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#columnAggr",
+                            "column": "RERA %",
+                            "table": "(Local) Basic Project Details",
+                            "aggregationFunction": "Max",
+                            "display": "RERA %"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Cash Collection",
+                            "table": "Measure",
+                            "display": "Cash Collection"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Cash Collection % of Project Cost",
+                            "table": "Measure",
+                            "display": "% of Actual Cost"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Cash Collection % of Project Cost (Rera/BG)",
+                            "table": "Measure",
+                            "display": "% of Rera Cost"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "BTP 2 (Before Completion)",
+                            "table": "Measure",
+                            "display": "BTP 2 (Before Completion)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "BTP Collection (12 Months)",
+                            "table": "Measure",
+                            "display": "BTP Collection (12 Months)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Inventory + Potential Collection (12 Months)",
+                            "table": "Measure",
+                            "display": "Inventory Collection (12 Months)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Derisk in 12 Months",
+                            "table": "Measure",
+                            "display": "Derisk in 12 Months"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Cost (Const + Infra) Derisk Month",
+                            "table": "Measure",
+                            "display": "De-risk Month"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Project Cost (Const + Infra) 20% Buffer Derisk Month",
+                            "table": "Measure",
+                            "display": "De-risk Month (10% Buffer)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "20% Completion Date",
+                            "table": "Measure",
+                            "display": "20% Completion Date"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Months to Derisk",
+                            "table": "Measure",
+                            "display": "Months to Derisk"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Months to Derisk (20% Buffer)",
+                            "table": "Measure",
+                            "display": "Months to Derisk (20% Buffer)"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Deficit on Existing sales",
+                            "table": "Measure",
+                            "display": "Deficit on Existing sales"
+                        },
+                        {
+                            "$schema": "http://powerbi.com/product/schema#measure",
+                            "measure": "Sales to Breakeven",
+                            "table": "Measure",
+                            "display": "Sales to Breakeven"
+                        }
+                    ]
+                }
+            ],
+            "filters": [
+                {
+                    "column": "Property Classification *",
+                    "operator": "All",
+                    "table": "(Local) Basic Project Details",
+                    "isAll": true,
+                    "isAdvanced": false
+                },
+                {
+                    "column": "Property Name",
+                    "operator": "All",
+                    "table": "(Local) Basic Project Details",
+                    "isAll": true,
+                    "isAdvanced": false
+                },
+                {
+                    "column": "Launch Date",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Value",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Cost (Const)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Cost (Infra)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Sold Value",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Sold Value % of Total",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Inventory Value",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Inventory Value % of Total",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Cost (Const+Infra)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Cash Collection",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Cash Collection % of Project Cost",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "gMIS Project Category",
+                    "operator": "All",
+                    "table": "(Local) Basic Project Details",
+                    "isAll": true,
+                    "isAdvanced": false
+                },
+                {
+                    "column": "Cash Collection % of Project Cost (Rera/BG)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "BTP Collection (12 Months)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Inventory + Potential Collection (12 Months)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Cost (Const + Infra) Derisk Month",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Derisk in 12 Months",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Project Cost (Const + Infra) 20% Buffer Derisk Month",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "20% Completion Date",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Months to Derisk",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Months to Derisk (20% Buffer)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Deficit on Existing sales",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "Sales to Breakeven",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "BTP 2 (Before Completion)",
+                    "operator": "And",
+                    "table": "Measure",
+                    "isAll": true,
+                    "conditions": [],
+                    "isAdvanced": true
+                },
+                {
+                    "column": "RERA %",
+                    "operator": "And",
+                    "table": "(Local) Basic Project Details",
+                    "isAll": true,
+                    "conditions": [
+                        {
+                            "operator": "LessThan",
+                            "value": 0.1
+                        }
+                    ],
+                    "isAdvanced": true
+                }
+            ],
+            "table": true,
+            "type": "pivotTable",
+            "_id": "444d28b80a760a7d118e"
+        }
+    ]
+}

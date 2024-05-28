@@ -1,0 +1,32 @@
+{ 
+"extends": "@chatie/tsconfig",
+"compilerOptions": {
+  "outDir": "dist",
+  "types": ["node"],
+  "sourceMap": true,
+  "esModuleInterop": true,
+  "ignoreDeprecations": "5.0",
+  "resolveJsonModule": true,
+  "importsNotUsedAsValues": "remove",
+  "moduleResolution":"Node",
+  "emitDeclarationOnly":true,
+  "allowImportingTsExtensions":true
+},
+  "exclude": [
+    "node_modules/",
+    "dist/",
+    "tests/fixtures/"
+  ],
+  "ts-node": {
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true,
+    "esm": true,
+  }
+
+  // "include": [
+  //   "examples/*.ts",
+  //   "scripts/**/*.ts",
+  //   "src/**/*.ts",
+  //   "tests/**/*.ts"
+  // ],
+}
